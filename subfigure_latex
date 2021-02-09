@@ -1,0 +1,61 @@
+\usepackage[english]{babel}
+\usepackage[noheader]{packages/sleek}
+\usepackage{packages/sleek-title}
+\usepackage{packages/sleek-theorems}
+\usepackage{packages/sleek-listings}
+\usepackage{titlesec}
+\titleformat{\chapter}{\normalfont\huge\bf}{\thechapter.}{20pt}{\huge\bf}
+\usepackage{nameref}
+\usepackage{xspace}
+\newcommand{\MATLAB}{\textsc{Matlab}\xspace}
+\usepackage{graphicx}
+\graphicspath{ {./resources/figs} }
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+\usepackage[toc,page]{appendix}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{svg}
+\usepackage{amsmath}
+\usepackage[export]{adjustbox}
+\usepackage[justification=centering]{subcaption}
+\usepackage[justification=centering]{caption}
+\usepackage{wrapfig}
+    
+    
+    
+    
+    
+    \begin{figure}
+     \centering
+     \begin{adjustbox}{minipage=\linewidth,scale=1}
+     \begin{subfigure}[b]{0.5\textwidth}
+         \centering
+         \includesvg[width=\textwidth]{Q1_1.svg}
+         \caption{Step 1}
+         \label{subfig:Q1_rw_oneparticle1}
+     \end{subfigure}\hfill 
+     \begin{subfigure}[b]{0.5\textwidth}
+         \centering
+         \includesvg[width=\textwidth]{Q1_2.svg}
+         \caption{Step 2}
+         \label{subfig:Q1_rw_oneparticle2}
+     \end{subfigure}\hfill
+
+     \centering
+     \begin{subfigure}[b]{0.5\textwidth}
+         \centering
+         \includesvg[width=\textwidth]{Q1_3.svg}
+         \caption{Step 3}
+         \label{subfig:Q1_rw_oneparticle3}
+     \end{subfigure}\hfill
+     \begin{subfigure}[b]{0.5\textwidth}
+         \centering
+         \includesvg[width=\textwidth]{Q1_4.svg}
+         \caption{Step 4}
+         \label{subfig:Q1_rw_oneparticle4}
+     \end{subfigure}\hfill
+     
+     \caption{1 particle 2D random walk where the movement is not constrained to a grid. Particle starts at the origin. A total of 4 steps with a step increment of 5.}
+     \label{fig:Q1_rw_oneparticle}
+     \end{adjustbox}
+\end{figure}   
