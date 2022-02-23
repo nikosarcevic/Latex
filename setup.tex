@@ -1,0 +1,220 @@
+\documentclass{book}
+\usepackage[light,math]{iwona}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{marginnote}
+\usepackage{subcaption}
+\usepackage{import}
+\usepackage{comment}
+\usepackage{emptypage}
+\usepackage[tbtags]{amsmath}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\diff}{\mathop{}\!d} % for integrals
+\usepackage{amsfonts}
+\pagenumbering{arabic}
+\usepackage{latexsym,amssymb}
+\usepackage{graphicx}
+%\usepackage{xcolor}
+\RequirePackage[framemethod=default]{mdframed}
+\usepackage[lastexercise]{exercise}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage[version=4]{mhchem}
+\hypersetup{linktoc=all}
+\usepackage{afterpage}
+\usepackage[export]{adjustbox}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{tabularx}
+\usepackage{biblatex}
+\addbibresource{references.bib}
+\usepackage{caption}
+\DeclareCaptionFont{mysize}{\fontsize{8}{9.6}\selectfont}
+\captionsetup{font=mysize}
+\usepackage[table,xcdraw]{xcolor}
+\documentclass[xcolor=table]{beamer}
+\usepackage[pagestyles]{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\setlength{\headsep}{0.5in}
+\usepackage{imakeidx}
+\usepackage{pagecolor,lipsum}
+\pagecolor{white}
+
+%%%%%%%%%%%%%%%%%% Niko Colors %%%%%%%%%%%%%%%%%%
+\definecolor{vlgray}{RGB}{245,245,245}
+\definecolor{primary}{RGB}{255,140,0}
+\definecolor{bg}{RGB}{250,250,250}
+\definecolor{lgreen}{RGB}{184, 209, 126}
+\definecolor{dgreen}{RGB}{112, 163, 0}
+\definecolor{lorange}{RGB}{255, 199, 128}
+\definecolor{dorange}{RGB}{255, 145, 0}
+\definecolor{lblue}{RGB}{127, 175, 187}
+\definecolor{dblue}{RGB}{0, 95, 117}
+\newcommand{\niko}{Niko Sarcevic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\booktitle}{Introduction to Nuclear Physics}
+\setlength\headheight{21pt}
+\newcommand{\der}{\mathrm{d}}
+%%%%%%%%%%%%%%%%%% links setup %%%%%%%%%%%%%%%%%%
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=dblue,
+    filecolor=dorange, 
+    citecolor=dorange,
+    urlcolor=dblue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
+%%%%%%%%%%%%%%%%%% header & footer %%%%%%%%%%%%%%%%%%
+\newcommand{\hsp}{\hspace{20pt}}
+\newcommand{\ntl}{\newline \newline}
+
+\titleformat{\chapter}[hang]{\fontsize{50}{60}\bfseries\color{dblue}}{\thechapter\hsp\fontsize{90}{60}\selectfont\textcolor{dblue}{|}\hsp}{0pt}{\thispagestyle{empty}\Huge\bfseries}
+
+\titleformat{\section}{\large\bfseries\color{dblue}}{}{0pt}{\textcolor{dblue}{ \thesection} \ }[{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}{\large\bfseries\color{dblue}}{}{0pt}{\textcolor{dblue}{ \thesubsection} \ }[{\titlerule[0.8pt]}]
+
+\usepackage{blindtext}
+
+\newpagestyle{mine}{
+\setlength\fboxsep{10pt}
+
+%%%%%%%%%%%%%%%%%% header %%%%%%%%%%%%%%%%%%
+
+\sethead[\bfseries
+
+\llap{\colorbox{dorange}{\parbox{\dimexpr\marginparsep + \marginparwidth\relax}{\hspace{20pt}\color{white}\thepage\vphantom{|}}}}%
+\colorbox{dblue}{\parbox{\dimexpr\linewidth-2\fboxsep}{~\color{white}\thechapter~\color{dblue}|\hspace{0.75em}\color{white}\chaptertitle}}][][]%
+
+{}{}{\bfseries\colorbox{dblue}{\parbox{\dimexpr\linewidth-2\fboxsep}{\color{white}\thechapter~\color{dblue}|\hspace{0.75em}\color{white}\chaptertitle}}%
+
+
+\rlap{\colorbox{dorange}{\parbox{\dimexpr\marginparsep + \marginparwidth\relax}{\hspace{97pt}\color{white}\thepage\vphantom{|}}}}}
+
+%%%%%%%%%%%%%%%%%% footer %%%%%%%%%%%%%%%%%%
+
+\setfoot[\bfseries
+
+\llap{{\parbox{\dimexpr\marginparsep + \marginparwidth\relax}{\hspace{10pt}\includegraphics[scale=0.5]{images/rad_circ_blueonorange.pdf}\vphantom{|}}}}%
+{\parbox{\dimexpr\linewidth-2\fboxsep}{}}][][]%
+
+{}{}{\bfseries{\parbox{\dimexpr\linewidth-2\fboxsep}{}}%
+
+
+\rlap{{\parbox{\dimexpr\marginparsep + \marginparwidth\relax}{\hspace{90pt}\includegraphics[scale=0.5]{images/rad_circ_blueonorange.pdf}\vphantom{|}}}}}
+
+}
+
+\pagestyle{mine}
+
+%%%%%%%%%%%%%%%%%% exercises setup %%%%%%%%%%%%%%%%%%
+
+% Exercises
+\renewcommand{\ExerciseHeader}{%
+  \par\noindent
+  \bf{Exercise \ExerciseHeaderNB}
+  \par\nopagebreak\medskip
+}
+\renewcommand{\AnswerHeader}{%
+  \par\noindent
+  \bf{Solution for Exercise \ExerciseHeaderNB }
+  \par\nopagebreak\medskip
+}
+\renewcommand{\QuestionNB}{(\alph{Question})\ }
+\renewcommand{\theQuestion}{(\alph{Question})}
+
+
+
+% Exercise box	  
+\newmdenv[skipabove=15pt,
+skipbelow=0pt,
+rightline=false,
+leftline=false,
+topline=false,
+bottomline=false,
+backgroundcolor=dorange,
+linecolor=lblue,
+innerleftmargin=10pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=6pt,
+fontcolor=white]{eBox}	
+
+% Answer box	  
+\newmdenv[skipabove=0pt,
+skipbelow=15pt,
+rightline=false,
+leftline=false,
+topline=false,
+bottomline=false,
+backgroundcolor=dblue,
+linecolor=dorange,
+innerleftmargin=10pt,
+innerrightmargin=5pt,
+innertopmargin=10pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=6pt,
+fontcolor=white]{aBox}	
+
+% Example box	  
+\newmdenv[skipabove=10pt,
+skipbelow=10pt,
+rightline=false,
+leftline=false,
+topline=false,
+bottomline=false,
+backgroundcolor=dorange,
+linecolor=lorange,
+innerleftmargin=10pt,
+innerrightmargin=10pt,
+innertopmargin=10pt,
+innerbottommargin=10pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=6pt,
+fontcolor=white]{exBox}
+
+% Highlight box	  
+\newmdenv[skipabove=10pt,
+skipbelow=10pt,
+rightline=false,
+leftline=false,
+topline=false,
+bottomline=false,
+backgroundcolor=lorange,
+linecolor=lorange,
+innerleftmargin=10pt,
+innerrightmargin=10pt,
+innertopmargin=10pt,
+innerbottommargin=10pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=6pt,
+fontcolor=dblue]{hiBox}
+
+\newtheorem{exampleC}{Example}
+
+\newenvironment{exercise}{\begin{eBox}\begin{Exercise}}{\end{Exercise}\hfill{}\end{eBox}}
+
+\newenvironment{answer}{\begin{aBox}\begin{Answer}}{\end{Answer}\hfill{\color{white}\tiny\ensuremath{\blacksquare}}\end{aBox}}	
+
+\newenvironment{example}{\begin{exBox}}{\end{exBox}}
+%\newenvironment{example}{\begin{exBox}\begin{exampleC}}{\end{exampleC}\end{exBox}}
+
+\newenvironment{highlight}{\begin{hiBox}}{\end{hiBox}}
+
+% Numbas (
+\newcommand{\numbas}[1]{\noindent \url{#1}\newline}
